@@ -1,0 +1,9 @@
+{
+  "pre": "eval/results/20260313_182948/metrics.json",
+  "post": "eval/results/20260313_193331/metrics.json",
+  "figures": {
+    "core_metrics": "eval/results/figures/pre_post_core_metrics.png",
+    "codebleu_breakdown": "eval/results/figures/pre_post_codebleu_breakdown.png",
+    "speed_metrics": "eval/results/figures/pre_post_speed_metrics.png"
+  }
+}

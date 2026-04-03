@@ -1,0 +1,33 @@
+```python
+from collections import defaultdict
+from typing import List, Dict
+
+def group_by_length(strings: List[str]) -> Dict[int, List[str]]:
+    """
+    按字符串长度分组，返回字典：{长度: [字符串列表]}
+    
+    时间复杂度：O(n)，其中 n 为字符串列表的长度。
+    空间复杂度：O(n)，用于存储分组结果。
+    """
+    groups = defaultdict(list)
+    
+    for s in strings:
+        length = len(s)
+        groups[length].append(s)
+    
+    return dict(groups)
+
+
+# 示例
+if __name__ == "__main__":
+    data = ["a", "bb", "ccc", "dd", "eee", "f", "ggg"]
+    result = group_by_length(data)
+    print(result)
+    # 输出示例：{1: ['a', 'f'], 2: ['bb', 'dd'], 3: ['ccc', 'eee', 'ggg']}
+```
+
+### 复杂度分析
+
+- **时间复杂度**：  
+  遍历列表一次，对每个字符串调用 `len()`（平均 O(1)），并插入字典。  
+  总

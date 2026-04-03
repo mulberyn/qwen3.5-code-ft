@@ -1,0 +1,23 @@
+{
+  "base_avg": {
+    "correctness": 3.0,
+    "completeness": 4.3,
+    "runnability": 3.6,
+    "explanation": 3.4
+  },
+  "lora_avg": {
+    "correctness": 3.5,
+    "completeness": 4.7,
+    "runnability": 4.0,
+    "explanation": 3.3
+  },
+  "artifacts": {
+    "base_raw": "lora/compare/fixed10/base_raw.json",
+    "lora_raw": "lora/compare/fixed10/lora_raw.json",
+    "base_scores": "lora/compare/fixed10/base_scores.json",
+    "lora_scores": "lora/compare/fixed10/lora_scores.json",
+    "csv": "lora/compare/fixed10/comparison_table.csv",
+    "markdown": "lora/compare/fixed10/comparison_table.md",
+    "quality_analysis": "lora/compare/fixed10/quality_analysis.md"
+  }
+}

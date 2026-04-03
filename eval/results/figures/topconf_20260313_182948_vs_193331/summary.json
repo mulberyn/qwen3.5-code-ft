@@ -1,0 +1,16 @@
+{
+  "run_a": "eval/results/20260313_182948",
+  "run_b": "eval/results/20260313_193331",
+  "labels": {
+    "a": "Base",
+    "b": "LoRA"
+  },
+  "output_dir": "eval/results/figures/topconf_20260313_182948_vs_193331",
+  "figures": {
+    "core_metrics": "eval/results/figures/topconf_20260313_182948_vs_193331/topconf_core_metrics.png",
+    "codebleu_components": "eval/results/figures/topconf_20260313_182948_vs_193331/topconf_codebleu_components.png",
+    "efficiency_metrics": "eval/results/figures/topconf_20260313_182948_vs_193331/topconf_efficiency_metrics.png",
+    "tradeoff_scatter": "eval/results/figures/topconf_20260313_182948_vs_193331/topconf_tradeoff_scatter.png"
+  },
+  "report": "eval/results/figures/topconf_20260313_182948_vs_193331/topconf_comparison_report.md"
+}

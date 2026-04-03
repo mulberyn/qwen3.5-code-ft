@@ -1,0 +1,40 @@
+{
+  "timestamp": "20260313_181747",
+  "model_dir": "/root/autodl-tmp/models/Qwen3.5-4B",
+  "config": {
+    "dtype": "bf16",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 256,
+    "lcb_max_new_tokens": 768,
+    "humaneval_n": 20,
+    "lcb_n": 20,
+    "eval_workers": 4,
+    "exec_timeout": 4.0
+  },
+  "humaneval": {
+    "task_count": 20,
+    "samples_path": "tutorial/results/20260313_181747/humaneval_samples.jsonl",
+    "generations_path": "tutorial/results/20260313_181747/humaneval_generations.jsonl",
+    "pass_at_1": 0.1,
+    "codebleu": {
+      "codebleu": 0.2871808357374124,
+      "ngram_match_score": 0.139242489559811,
+      "weighted_ngram_match_score": 0.19747918576776327,
+      "syntax_match_score": 0.4410339256865913,
+      "dataflow_match_score": 0.3709677419354839
+    }
+  },
+  "livecodebench_lite": {
+    "problem_count": 20,
+    "predictions_path": "tutorial/results/20260313_181747/livecodebench_lite_predictions.jsonl",
+    "public_problem_pass_rate": 0.0,
+    "public_test_pass_rate": 0.0,
+    "compile_success_rate": 0.2,
+    "total_public_tests": 9
+  },
+  "notes": [
+    "LiveCodeBench-lite metric here uses public tests only, not the official hidden-test leaderboard metric.",
+    "HumanEval pass@1 requires executing generated code and can be sensitive to decoding parameters."
+  ]
+}

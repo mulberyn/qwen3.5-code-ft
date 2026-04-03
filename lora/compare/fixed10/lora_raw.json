@@ -1,0 +1,72 @@
+[
+  {
+    "id": "Q1",
+    "prompt": "请写 Python 函数 reverse_words(s)，把句子中单词顺序反转（单词内部不反转），并说明时间复杂度和空间复杂度。",
+    "answer": "```python\ndef reverse_words(s):\n    \"\"\"\n    反转句子中单词的顺序，单词内部不反转。\n    \n    参数:\n    s (str): 输入的句子\n    \n    返回:\n    str: 单词顺序反转后的句子\n    \"\"\"\n    words = s.split()\n    return ' '.join(reversed(words))\n\n# 示例用法\nsentence = \"Hello World from Python\"\nprint(reverse_words(sentence))  # 输出: \"Python from World Hello\"\n```\n\n**时间复杂度**: O(n)，其中 n 是字符串的长度。这是因为我们需要遍历字符串一次来分割单词，然后再次遍历单词列表来反转它们。\n\n**空间复杂度**: O(n)，因为我们需要额外的空间来存储分割后的单词列表和反转后的结果字符串。\n",
+    "latency_sec": 6.615639283787459,
+    "generated_tokens": 168
+  },
+  {
+    "id": "Q2",
+    "prompt": "请写 Python 函数 is_palindrome(s)，忽略大小写与非字母数字字符，判断是否回文，并说明复杂度。",
+    "answer": "```python\ndef is_palindrome(s):\n    \"\"\"\n    判断字符串是否为回文，忽略大小写和非字母数字字符。\n    \n    参数:\n    s (str): 输入字符串\n    \n    返回:\n    bool: 如果是回文返回 True，否则返回 False\n    \"\"\"\n    # 过滤出字母数字字符并转换为小写\n    filtered_s = ''.join(char.lower() for char in s if char.isalnum())\n    \n    # 判断过滤后的字符串是否为回文\n    return filtered_s == filtered_s[::-1]\n\n# 示例用法\nprint(is_palindrome(\"A man, a plan, a canal: Panama\"))  # 输出: True\nprint(is_palindrome(\"race a car\"))  # 输出: False\n```\n\n**时间复杂度**: O(n)，其中 n 是输入字符串的长度。我们需要遍历字符串一次来过滤字符，然后再次遍历过滤后的字符串来判断是否为回文。\n\n**空间复杂度**: O(n)，因为我们需要创建一个过滤后的新字符串。\n",
+    "latency_sec": 8.677735531702638,
+    "generated_tokens": 221
+  },
+  {
+    "id": "Q3",
+    "prompt": "请写 Python 函数 two_sum(nums, target)，返回和为 target 的两个下标，并说明复杂度。",
+    "answer": "```python\ndef two_sum(nums, target):\n    \"\"\"\n    返回和为 target 的两个下标。\n    \n    :param nums: List[int] - 整数列表\n    :param target: int - 目标和\n    :return: List[int] - 两个下标的列表\n    \"\"\"\n    num_to_index = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in num_to_index:\n            return [num_to_index[complement], i]\n        num_to_index[num] = i\n    return None\n\n# 示例\nnums = [2, 7, 11, 15]\ntarget = 9\nprint(two_sum(nums, target))  # 输出: [0, 1]\n```\n\n**时间复杂度**：O(n)，其中 n 是列表 `nums` 的长度。我们遍历列表一次，每次查找操作的时间复杂度为 O(1)。\n\n**空间复杂度**：O(n)，因为我们需要一个哈希表来存储数字及其对应的下标。\n",
+    "latency_sec": 8.970924244262278,
+    "generated_tokens": 233
+  },
+  {
+    "id": "Q4",
+    "prompt": "请写 Python 函数 fibonacci(n)，返回第 n 个斐波那契数（n>=0），并说明复杂度。",
+    "answer": "```python\ndef fibonacci(n):\n    \"\"\"\n    计算第 n 个斐波那契数。\n    \n    参数:\n    n (int): 非负整数，表示要计算的斐波那契数的索引。\n    \n    返回:\n    int: 第 n 个斐波那契数。\n    \"\"\"\n    if n < 0:\n        raise ValueError(\"输入必须是非负整数\")\n    elif n == 0:\n        return 0\n    elif n == 1:\n        return 1\n    \n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b\n\n# 示例用法\nprint(fibonacci(10))  # 输出: 55\n```\n\n**时间复杂度**: O(n)  \n**空间复杂度**: O(1)\n",
+    "latency_sec": 7.89745975099504,
+    "generated_tokens": 204
+  },
+  {
+    "id": "Q5",
+    "prompt": "请写 Python 函数 merge_intervals(intervals)，合并重叠区间，并说明复杂度。",
+    "answer": "```python\ndef merge_intervals(intervals):\n    \"\"\"\n    合并重叠区间。\n    \n    参数:\n    intervals (List[List[int]]): 一个包含多个区间的列表，每个区间是一个包含两个整数的列表。\n    \n    返回:\n    List[List[int]]: 合并后的区间列表。\n    \"\"\"\n    if not intervals:\n        return []\n    \n    # 按区间起始位置排序\n    intervals.sort(key=lambda x: x[0])\n    \n    merged = [intervals[0]]\n    \n    for current in intervals[1:]:\n        last = merged[-1]\n        if current[0] <= last[1]:\n            # 如果当前区间与最后一个区间重叠，合并它们\n            merged[-1] = [last[0], max(last[1], current[1])]\n        else:\n            # 否则，将当前区间添加到合并列表中\n            merged.append(current)\n    \n    return merged\n\n# 示例用法\nintervals = [[1, 3], [2, 6], [8, 10], [15, 18]]\nprint(merge_intervals(intervals))  # 输出: [[1, 6], [8, 10], [15, 18]]\n",
+    "latency_sec": 10.720490705687553,
+    "generated_tokens": 280
+  },
+  {
+    "id": "Q6",
+    "prompt": "请写 Python 函数 top_k_frequent(nums, k)，返回出现频率最高的 k 个元素，并说明复杂度。",
+    "answer": "```python\nfrom collections import Counter\n\ndef top_k_frequent(nums, k):\n    \"\"\"\n    返回出现频率最高的 k 个元素。\n    \n    参数:\n    nums (List[int]): 输入的数字列表\n    k (int): 需要返回的元素个数\n    \n    返回:\n    List[int]: 出现频率最高的 k 个元素\n    \"\"\"\n    # 统计每个数字出现的频率\n    frequency = Counter(nums)\n    \n    # 获取出现频率最高的 k 个元素\n    return frequency.most_common(k)\n\n# 示例用法\nnums = [1, 3, 2, 2, 4, 1, 1, 3, 3, 3]\nk = 3\nprint(top_k_frequent(nums, k))  # 输出: [(3, 4), (1, 3), (2, 2)]\n```\n\n**复杂度分析：**\n- **时间复杂度：** O(n log n) 或 O(n)，取决于 `Counter` 的实现和 `most_common` 的实现。`Counter` 的构建是 O(n)，`most_common` 在最坏情况下是 O(n log n)。\n- **空间复杂度：** O(n)，用于存储频率计数的字典。\n",
+    "latency_sec": 10.664298099000007,
+    "generated_tokens": 275
+  },
+  {
+    "id": "Q7",
+    "prompt": "请写 Python 函数 group_anagrams(strs)，把字母异位词分组，并说明复杂度。",
+    "answer": "```python\ndef group_anagrams(strs):\n    \"\"\"\n    将字母异位词分组。\n    \n    :param strs: List[str] - 输入字符串列表\n    :return: List[List[str]] - 分组后的字母异位词列表\n    \"\"\"\n    anagram_map = {}\n    for s in strs:\n        key = ''.join(sorted(s))\n        if key in anagram_map:\n            anagram_map[key].append(s)\n        else:\n            anagram_map[key] = [s]\n    return list(anagram_map.values())\n\n# 示例用法\nstrs = [\"eat\", \"tea\", \"tan\", \"ate\", \"nat\", \"bat\"]\nprint(group_anagrams(strs))\n```\n\n**复杂度分析：**\n- **时间复杂度：** O(n * m * log(m))，其中 n 是字符串列表的长度，m 是字符串的平均长度。排序每个字符串的时间复杂度为 O(m * log(m))，总共需要排序 n 个字符串。\n- **空间复杂度：** O(n * m)，用于存储分组后的结果。\n",
+    "latency_sec": 9.128292068373412,
+    "generated_tokens": 236
+  },
+  {
+    "id": "Q8",
+    "prompt": "请写 Python 函数 valid_parentheses(s)，判断括号字符串是否有效，并说明复杂度。",
+    "answer": "```python\ndef valid_parentheses(s):\n    \"\"\"\n    判断括号字符串是否有效。\n    \n    有效括号字符串需满足：\n    1. 左括号和右括号数量相等\n    2. 任意前缀中左括号数量不少于右括号数量\n    \n    :param s: 输入字符串\n    :return: 如果括号有效返回True，否则返回False\n    \"\"\"\n    stack = []\n    for char in s:\n        if char in '([{':\n            stack.append(char)\n        elif char in ')]}':\n            if not stack:\n                return False\n            top = stack.pop()\n            if (top == '(' and char != ')') or \\\n               (top == '[' and char != ']') or \\\n               (top == '{' and char != '}'):\n                return False\n    return len(stack) == 0\n\n# 测试用例\nprint(valid_parentheses(\"()\"))  # True\nprint(valid_parentheses(\"()[]{}\"))  # True\nprint(valid_parentheses(\"(]\"))  # False\nprint(valid_parentheses(\"([)]\"))  # False\nprint(valid_parentheses(\"{[]}\"))  # True\nprint(valid_parentheses(\"((()))\"))  # True\nprint(valid_parentheses",
+    "latency_sec": 10.798675931990147,
+    "generated_tokens": 280
+  },
+  {
+    "id": "Q9",
+    "prompt": "请写 Python 函数 binary_search(nums, target)，返回目标下标，不存在返回 -1，并说明复杂度。",
+    "answer": "```python\ndef binary_search(nums, target):\n    \"\"\"\n    在有序列表 nums 中查找目标值 target 的下标。\n    如果找到，返回下标；否则返回 -1。\n    \n    参数:\n    nums (List[int]): 有序列表\n    target (int): 目标值\n    \n    返回:\n    int: 目标值的下标，如果不存在则返回 -1\n    \"\"\"\n    left, right = 0, len(nums) - 1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    \n    return -1\n```\n\n**时间复杂度**: O(log n)，其中 n 是列表的长度。每次迭代将搜索范围减半。\n\n**空间复杂度**: O(1)，只使用了常数级别的额外空间。\n",
+    "latency_sec": 8.520190494135022,
+    "generated_tokens": 219
+  },
+  {
+    "id": "Q10",
+    "prompt": "请写 Python 函数 longest_common_prefix(strs)，返回字符串数组的最长公共前缀，并说明复杂度。",
+    "answer": "```python\ndef longest_common_prefix(strs):\n    \"\"\"\n    返回字符串数组的最长公共前缀。\n    \n    :param strs: List[str] - 字符串数组\n    :return: str - 最长公共前缀\n    \"\"\"\n    if not strs:\n        return \"\"\n    \n    prefix = strs[0]\n    for s in strs[1:]:\n        while not s.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix\n\n# 示例用法\nstrs = [\"flower\", \"flow\", \"flight\"]\nprint(longest_common_prefix(strs))  # 输出: \"fl\"\n```\n\n**时间复杂度**：O(N * M)，其中 N 是字符串数组的长度，M 是最长字符串的长度。  \n**空间复杂度**：O(1)，只使用了常数级别的额外空间。\n",
+    "latency_sec": 7.575044127646834,
+    "generated_tokens": 196
+  }
+]

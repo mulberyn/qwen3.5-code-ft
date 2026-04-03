@@ -1,0 +1,9 @@
+{
+  "run_count": 2,
+  "latest_run": "20260313_182948",
+  "figures": {
+    "scores": "eval/results/figures/scores_across_runs.png",
+    "throughput": "eval/results/figures/throughput_across_runs.png",
+    "latency": "eval/results/figures/latency_across_runs.png"
+  }
+}

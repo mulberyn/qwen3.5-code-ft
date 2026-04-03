@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Q1",
+    "correctness": 5.0,
+    "completeness": 5.0,
+    "runnability": 5.0,
+    "explanation": 4.0,
+    "tests_passed": 3,
+    "tests_total": 3,
+    "error": "",
+    "latency_sec": 6.616,
+    "generated_tokens": 168
+  },
+  {
+    "id": "Q2",
+    "correctness": 5.0,
+    "completeness": 5.0,
+    "runnability": 5.0,
+    "explanation": 4.0,
+    "tests_passed": 3,
+    "tests_total": 3,
+    "error": "",
+    "latency_sec": 8.678,
+    "generated_tokens": 221
+  },
+  {
+    "id": "Q3",
+    "correctness": 5.0,
+    "completeness": 5.0,
+    "runnability": 5.0,
+    "explanation": 4.0,
+    "tests_passed": 3,
+    "tests_total": 3,
+    "error": "",
+    "latency_sec": 8.971,
+    "generated_tokens": 233
+  },
+  {
+    "id": "Q4",
+    "correctness": 5.0,
+    "completeness": 5.0,
+    "runnability": 5.0,
+    "explanation": 4.0,
+    "tests_passed": 3,
+    "tests_total": 3,
+    "error": "",
+    "latency_sec": 7.897,
+    "generated_tokens": 204
+  },
+  {
+    "id": "Q5",
+    "correctness": 0.0,
+    "completeness": 4.0,
+    "runnability": 1.0,
+    "explanation": 0.5,
+    "tests_passed": 0,
+    "tests_total": 2,
+    "error": "exec_error: SyntaxError: invalid syntax (<string>, line 1)",
+    "latency_sec": 10.72,
+    "generated_tokens": 280
+  },
+  {
+    "id": "Q6",
+    "correctness": 0.0,
+    "completeness": 5.0,
+    "runnability": 3.0,
+    "explanation": 4.0,
+    "tests_passed": 0,
+    "tests_total": 2,
+    "error": "",
+    "latency_sec": 10.664,
+    "generated_tokens": 275
+  },
+  {
+    "id": "Q7",
+    "correctness": 5.0,
+    "completeness": 5.0,
+    "runnability": 5.0,
+    "explanation": 4.0,
+    "tests_passed": 1,
+    "tests_total": 1,
+    "error": "",
+    "latency_sec": 9.128,
+    "generated_tokens": 236
+  },
+  {
+    "id": "Q8",
+    "correctness": 0.0,
+    "completeness": 4.0,
+    "runnability": 1.0,
+    "explanation": 0.5,
+    "tests_passed": 0,
+    "tests_total": 3,
+    "error": "exec_error: SyntaxError: invalid syntax (<string>, line 1)",
+    "latency_sec": 10.799,
+    "generated_tokens": 280
+  },
+  {
+    "id": "Q9",
+    "correctness": 5.0,
+    "completeness": 4.0,
+    "runnability": 5.0,
+    "explanation": 4.0,
+    "tests_passed": 2,
+    "tests_total": 2,
+    "error": "",
+    "latency_sec": 8.52,
+    "generated_tokens": 219
+  },
+  {
+    "id": "Q10",
+    "correctness": 5.0,
+    "completeness": 5.0,
+    "runnability": 5.0,
+    "explanation": 4.0,
+    "tests_passed": 2,
+    "tests_total": 2,
+    "error": "",
+    "latency_sec": 7.575,
+    "generated_tokens": 196
+  }
+]

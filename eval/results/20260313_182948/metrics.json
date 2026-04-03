@@ -1,0 +1,60 @@
+{
+  "timestamp": "20260313_182948",
+  "model_dir": "/root/autodl-tmp/models/Qwen3.5-4B",
+  "config": {
+    "dtype": "bf16",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 256,
+    "lcb_max_new_tokens": 768,
+    "humaneval_n": 20,
+    "lcb_n": 20,
+    "eval_workers": 4,
+    "exec_timeout": 4.0
+  },
+  "humaneval": {
+    "task_count": 20,
+    "samples_path": "eval/results/20260313_182948/humaneval_samples.jsonl",
+    "generations_path": "eval/results/20260313_182948/humaneval_generations.jsonl",
+    "pass_at_1": 0.1,
+    "codebleu": {
+      "codebleu": 0.2891969647696704,
+      "ngram_match_score": 0.139242489559811,
+      "weighted_ngram_match_score": 0.19747918576776327,
+      "syntax_match_score": 0.4410339256865913,
+      "dataflow_match_score": 0.3790322580645161
+    },
+    "generation_speed": {
+      "sample_count": 20,
+      "avg_prompt_tokens": 204.35,
+      "avg_generated_tokens": 78.45,
+      "avg_latency_sec": 2.4044979981612413,
+      "total_generated_tokens": 1569,
+      "total_generation_time_sec": 48.08995996322483,
+      "overall_tokens_per_sec": 32.626352802120024,
+      "avg_tokens_per_sec": 31.90578195804481
+    }
+  },
+  "livecodebench_lite": {
+    "problem_count": 20,
+    "predictions_path": "eval/results/20260313_182948/livecodebench_lite_predictions.jsonl",
+    "public_problem_pass_rate": 0.0,
+    "public_test_pass_rate": 0.0,
+    "compile_success_rate": 0.2,
+    "total_public_tests": 9,
+    "generation_speed": {
+      "sample_count": 20,
+      "avg_prompt_tokens": 538.35,
+      "avg_generated_tokens": 111.45,
+      "avg_latency_sec": 3.356709685921669,
+      "total_generated_tokens": 2229,
+      "total_generation_time_sec": 67.13419371843338,
+      "overall_tokens_per_sec": 33.20215640555123,
+      "avg_tokens_per_sec": 25.04602111485635
+    }
+  },
+  "notes": [
+    "LiveCodeBench-lite metric here uses public tests only, not the official hidden-test leaderboard metric.",
+    "HumanEval pass@1 requires executing generated code and can be sensitive to decoding parameters."
+  ]
+}

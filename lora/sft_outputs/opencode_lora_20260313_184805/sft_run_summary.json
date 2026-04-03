@@ -1,0 +1,33 @@
+{
+  "timestamp": "20260313_184805",
+  "model_dir": "/root/autodl-tmp/models/Qwen3.5-4B",
+  "dataset": "nvidia/OpenCodeInstruct",
+  "train_samples": 800,
+  "max_length": 1024,
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "training": {
+    "max_steps": 20,
+    "per_device_batch_size": 1,
+    "gradient_accumulation": 8,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0,
+    "elapsed_sec": 262.2810490131378
+  },
+  "paths": {
+    "output_dir": "lora/sft_outputs/opencode_lora_20260313_184805",
+    "adapter_dir": "lora/sft_outputs/opencode_lora_20260313_184805/adapter"
+  }
+}

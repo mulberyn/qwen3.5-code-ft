@@ -1,0 +1,61 @@
+{
+  "timestamp": "20260313_193331",
+  "model_dir": "/root/autodl-tmp/models/Qwen3.5-4B",
+  "adapter_dir": "lora/sft_outputs/opencode_lora_20260313_184805/adapter",
+  "config": {
+    "dtype": "bf16",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 256,
+    "lcb_max_new_tokens": 768,
+    "humaneval_n": 20,
+    "lcb_n": 20,
+    "eval_workers": 4,
+    "exec_timeout": 4.0
+  },
+  "humaneval": {
+    "task_count": 20,
+    "samples_path": "eval/results/20260313_193331/humaneval_samples.jsonl",
+    "generations_path": "eval/results/20260313_193331/humaneval_generations.jsonl",
+    "pass_at_1": 0.0,
+    "codebleu": {
+      "codebleu": 0.27753111976033307,
+      "ngram_match_score": 0.15773006282751809,
+      "weighted_ngram_match_score": 0.17106136081749343,
+      "syntax_match_score": 0.42649434571890144,
+      "dataflow_match_score": 0.3548387096774194
+    },
+    "generation_speed": {
+      "sample_count": 20,
+      "avg_prompt_tokens": 204.35,
+      "avg_generated_tokens": 59.75,
+      "avg_latency_sec": 2.5358520946465433,
+      "total_generated_tokens": 1195,
+      "total_generation_time_sec": 50.717041892930865,
+      "overall_tokens_per_sec": 23.562099747906704,
+      "avg_tokens_per_sec": 23.187234517992103
+    }
+  },
+  "livecodebench_lite": {
+    "problem_count": 20,
+    "predictions_path": "eval/results/20260313_193331/livecodebench_lite_predictions.jsonl",
+    "public_problem_pass_rate": 0.2,
+    "public_test_pass_rate": 0.4444444444444444,
+    "compile_success_rate": 0.35,
+    "total_public_tests": 9,
+    "generation_speed": {
+      "sample_count": 20,
+      "avg_prompt_tokens": 538.35,
+      "avg_generated_tokens": 186.4,
+      "avg_latency_sec": 7.455044279876165,
+      "total_generated_tokens": 3728,
+      "total_generation_time_sec": 149.1008855975233,
+      "overall_tokens_per_sec": 25.003204944491124,
+      "avg_tokens_per_sec": 24.868344658045775
+    }
+  },
+  "notes": [
+    "LiveCodeBench-lite metric here uses public tests only, not the official hidden-test leaderboard metric.",
+    "HumanEval pass@1 requires executing generated code and can be sensitive to decoding parameters."
+  ]
+}
